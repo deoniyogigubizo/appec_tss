@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #2D3748;
+  --antiquewhite: #FAEBD7;
+  --antiquewhite-light: #FDF8F0;
+  --primary: #10B981;
+  --primary-dark: #059669;
+  --sky: #87CEEB;
+  --sky-dark: #0EA5E9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-antiquewhite: var(--antiquewhite);
+  --color-antiquewhite-light: var(--antiquewhite-light);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-sky: var(--sky);
+  --color-sky-dark: var(--sky-dark);
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+body {
+  background: var(--antiquewhite);
+  color: var(--foreground);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--antiquewhite);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sky);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sky-dark);
+}
+
+/* Background pattern */
+.bg-pattern {
+  background-image: 
+    linear-gradient(45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--antiquewhite) 25%, var(--antiquewhite-light) 50%, var(--antiquewhite) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Geometric background */
+.geometric-bg {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(135, 206, 235, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(135, 206, 235, 0.05) 0%, transparent 30%);
+}
+
+/* Announcement ticker animation */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-animate {
+  animation: ticker 30s linear infinite;
+}
+
+.ticker-animate:hover {
+  animation-play-state: paused;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(135, 206, 235, 0.3);
+  border-color: var(--sky);
+}
+
+/* Input focus styles */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--sky);
+  box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.3);
+}

@@ -1,0 +1,10 @@
+export { default as User, type IUser, type UserRole } from './User';
+export { default as Student, type IStudent } from './Student';
+export { default as Teacher, type ITeacher } from './Teacher';
+export { default as Course, type ICourse } from './Course';
+export { default as Class, type IClass } from './Class';
+export { default as TeacherAssignment, type ITeacherAssignment } from './TeacherAssignment';
+export { default as AcademicMark, type IAcademicMark, type IMark } from './AcademicMark';
+export { default as DisciplineMark, type IDisciplineMark, type IDisciplineIncident } from './DisciplineMark';
+export { default as AdmissionLetter, type IAdmissionLetter } from './AdmissionLetter';
+export { default as AcademicTerm, type IAcademicTerm } from './AcademicTerm';
